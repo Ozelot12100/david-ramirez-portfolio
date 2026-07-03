@@ -12,6 +12,10 @@ import Supabase from "./icons/Supabase.astro";
 import TypeScript from "./icons/TypeScript.astro";
 import FastAPI from "./icons/FastAPI.astro";
 import Ai from "./icons/Ai.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const TAGS = {
   NEXT: {
@@ -70,63 +74,111 @@ const TAGS = {
 // pública en vivo cuando existe.
 const PROJECTS = [
   {
-    title: "Sistema Biométrico de Asistencia (IA facial)",
-    description:
-      "Solución completa de control de asistencia con reconocimiento facial para Rocky Sushi, diseñada como producto de marca blanca. Backend en Python/FastAPI con reconocimiento facial (dlib, embeddings de 128 dimensiones), app Flutter (kiosco + panel admin) para Android y Windows, motor de nómina y turnos, e instalador para Windows.",
+    title: {
+      es: "Sistema Biométrico de Asistencia (IA facial)",
+      en: "Biometric Attendance System (Facial AI)",
+    },
+    description: {
+      es: "Solución completa de control de asistencia con reconocimiento facial para Rocky Sushi, diseñada como producto de marca blanca. Backend en Python/FastAPI con reconocimiento facial (dlib, embeddings de 128 dimensiones), app Flutter (kiosco + panel admin) para Android y Windows, motor de nómina y turnos, e instalador para Windows.",
+      en: "Complete facial-recognition attendance solution for Rocky Sushi, designed as a white-label product. Python/FastAPI backend with facial recognition (dlib, 128-dimension embeddings), a Flutter app (kiosk + admin panel) for Android and Windows, a payroll and shifts engine, and a Windows installer.",
+    },
     link: "",
     github: "",
     image: "/projects/RockySushi.webp",
-    alt: "Panel administrativo del sistema biométrico de asistencia de Rocky Sushi",
+    alt: {
+      es: "Panel administrativo del sistema biométrico de asistencia de Rocky Sushi",
+      en: "Admin panel of Rocky Sushi's biometric attendance system",
+    },
     tags: [TAGS.AI, TAGS.FASTAPI, TAGS.FLUTTER, TAGS.SUPABASE],
   },
   {
-    title: "Palaliga — Gestión de Ligas de Pádel",
-    description:
-      "Plataforma multi-tenant (marca blanca) para crear y administrar ligas de pádel: generación automática de calendario round-robin, tabla de clasificación en tiempo real y cuadros de playoffs. Aislamiento por organización con Row-Level Security y actualizaciones en vivo.",
+    title: {
+      es: "Palaliga — Gestión de Ligas de Pádel",
+      en: "Palaliga — Padel League Management",
+    },
+    description: {
+      es: "Plataforma multi-tenant (marca blanca) para crear y administrar ligas de pádel: generación automática de calendario round-robin, tabla de clasificación en tiempo real y cuadros de playoffs. Aislamiento por organización con Row-Level Security y actualizaciones en vivo.",
+      en: "Multi-tenant (white-label) platform to create and manage padel leagues: automatic round-robin schedule generation, real-time standings, and playoff brackets. Per-organization isolation with Row-Level Security and live updates.",
+    },
     link: "https://palaliga.vercel.app",
     github: "",
     image: "/projects/BlingRR.webp",
-    alt: "Interfaz de Palaliga mostrando la gestión de una liga de pádel",
+    alt: {
+      es: "Interfaz de Palaliga mostrando la gestión de una liga de pádel",
+      en: "Palaliga interface showing padel league management",
+    },
     tags: [TAGS.FLUTTER, TAGS.SUPABASE],
   },
   {
-    title: "Hogarly — Organización del hogar en familia",
-    description:
-      "PWA colaborativa para organizar el hogar: tareas con recompensas por puntos, lista de compras en vivo, comidas, calendario y notificaciones push. Construida con Next.js y Supabase, con monitorización de errores (Sentry) y pruebas end-to-end.",
+    title: {
+      es: "Hogarly — Organización del hogar en familia",
+      en: "Hogarly — Family Home Organization",
+    },
+    description: {
+      es: "PWA colaborativa para organizar el hogar: tareas con recompensas por puntos, lista de compras en vivo, comidas, calendario y notificaciones push. Construida con Next.js y Supabase, con monitorización de errores (Sentry) y pruebas end-to-end.",
+      en: "Collaborative PWA to organize the household: point-based chore rewards, live shopping list, meals, calendar, and push notifications. Built with Next.js and Supabase, with error monitoring (Sentry) and end-to-end tests.",
+    },
     link: "https://app.hogarly.app",
     github: "",
     image: "/projects/Hogarly.webp",
-    alt: "Aplicación Hogarly para organizar tareas y compras del hogar en familia",
+    alt: {
+      es: "Aplicación Hogarly para organizar tareas y compras del hogar en familia",
+      en: "Hogarly app for organizing household chores and shopping as a family",
+    },
     tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.SUPABASE, TAGS.TAILWIND],
   },
   {
-    title: "DropWear — Punto de Venta e Inventario",
-    description:
-      "Sistema POS y de gestión de inventario en tiempo real para una tienda de ropa, con control de acceso por roles (socio, vendedor, administrador). Inventario sincronizado en vivo entre dispositivos mediante Supabase Realtime.",
+    title: {
+      es: "DropWear — Punto de Venta e Inventario",
+      en: "DropWear — Point of Sale & Inventory",
+    },
+    description: {
+      es: "Sistema POS y de gestión de inventario en tiempo real para una tienda de ropa, con control de acceso por roles (socio, vendedor, administrador). Inventario sincronizado en vivo entre dispositivos mediante Supabase Realtime.",
+      en: "Real-time POS and inventory management system for a clothing store, with role-based access control (partner, seller, admin). Inventory synced live across devices via Supabase Realtime.",
+    },
     link: "",
     github: "",
     image: "/projects/DropWear.webp",
-    alt: "Logotipo de DropWear, sistema de punto de venta e inventario",
+    alt: {
+      es: "Logotipo de DropWear, sistema de punto de venta e inventario",
+      en: "DropWear logo, a point-of-sale and inventory system",
+    },
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.SUPABASE, TAGS.TAILWIND],
   },
   {
-    title: "La Casa de Ramona — Web",
-    description:
-      "Sitio web bilingüe de renta vacacional de lujo en Puerto Peñasco. Optimizado para SEO, velocidad de carga y conversión de reservas, con formulario de contacto y reservación directa por WhatsApp.",
+    title: {
+      es: "La Casa de Ramona — Web",
+      en: "La Casa de Ramona — Website",
+    },
+    description: {
+      es: "Sitio web bilingüe de renta vacacional de lujo en Puerto Peñasco. Optimizado para SEO, velocidad de carga y conversión de reservas, con formulario de contacto y reservación directa por WhatsApp.",
+      en: "Bilingual website for a luxury vacation rental in Puerto Peñasco. Optimized for SEO, load speed, and booking conversion, with a contact form and direct booking via WhatsApp.",
+    },
     link: "https://www.lacasaderamona.com",
     github: "",
     image: "/projects/Lacasaderamona.webp",
-    alt: "Sitio web de la renta vacacional de lujo La Casa de Ramona",
+    alt: {
+      es: "Sitio web de la renta vacacional de lujo La Casa de Ramona",
+      en: "Website of the luxury vacation rental La Casa de Ramona",
+    },
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
   },
   {
-    title: "Estrella Brothers Carpentry — Web",
-    description:
-      "Sitio de portafolio bilingüe para una carpintería en Phoenix, Arizona. Galería de proyectos con comparador antes/después, contenido tipado (Content Collections + Zod), optimización de imágenes y SEO local con datos estructurados.",
+    title: {
+      es: "Estrella Brothers Carpentry — Web",
+      en: "Estrella Brothers Carpentry — Website",
+    },
+    description: {
+      es: "Sitio de portafolio bilingüe para una carpintería en Phoenix, Arizona. Galería de proyectos con comparador antes/después, contenido tipado (Content Collections + Zod), optimización de imágenes y SEO local con datos estructurados.",
+      en: "Bilingual portfolio site for a carpentry business in Phoenix, Arizona. Project gallery with before/after slider, typed content (Content Collections + Zod), image optimization, and local SEO with structured data.",
+    },
     link: "https://www.estrellabrotherscarpentry.com",
     github: "",
     image: "/projects/EstrellaBrothers.webp",
-    alt: "Trabajo de carpintería de Estrella Brothers: construcción de un patio techado",
+    alt: {
+      es: "Trabajo de carpintería de Estrella Brothers: construcción de un patio techado",
+      en: "Estrella Brothers carpentry work: building a covered patio",
+    },
     tags: [TAGS.ASTRO, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
 ];
@@ -139,7 +191,7 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt={alt}
+              alt={alt[lang]}
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
@@ -149,7 +201,7 @@ const PROJECTS = [
 
         <div class="w-full md:w-1/2 md:max-w-lg">
           <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
+            {title[lang]}
           </h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-row mb-2 gap-x-2">
@@ -166,19 +218,19 @@ const PROJECTS = [
             </ul>
 
             <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
+              {description[lang]}
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
-                  Código
+                  {t("project.code")}
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Ver en vivo
+                  {t("project.viewLive")}
                 </LinkButton>
               )}
             </footer>

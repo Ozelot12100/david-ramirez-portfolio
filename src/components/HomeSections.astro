@@ -1,0 +1,55 @@
+---
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import Skills from "@/components/Skills.astro";
+import StackIcon from "@/components/icons/Stack.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/ui";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<main class="px-4">
+  <SectionContainer class="py-16 md:py-36">
+    <Hero />
+  </SectionContainer>
+</main>
+<div class="space-y-24">
+  <SectionContainer id="experiencia">
+    <TitleSection>
+      <Briefcase class="size-8" />
+      {t("section.experience")}
+    </TitleSection>
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer id="proyectos">
+    <TitleSection>
+      <CodeIcon class="size-7" />
+      {t("section.projects")}
+    </TitleSection>
+    <Projects />
+  </SectionContainer>
+
+  <SectionContainer id="tecnologias">
+    <TitleSection>
+      <StackIcon class="size-8" />
+      {t("section.tech")}
+    </TitleSection>
+    <Skills />
+  </SectionContainer>
+
+  <SectionContainer id="sobre-mi">
+    <TitleSection>
+      <ProfileCheck class="size-8" />
+      {t("section.about")}
+    </TitleSection>
+    <AboutMe />
+  </SectionContainer>
+</div>

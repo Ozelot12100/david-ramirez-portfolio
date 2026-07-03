@@ -4,6 +4,9 @@ import Badge from "@/components/Badge.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
 import GitHubIcon from "@/components/icons/GitHub.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/ui";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <div class="max-w-xl">
@@ -19,7 +22,7 @@ import GitHubIcon from "@/components/icons/GitHub.astro";
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{t("hero.badge")}</Badge>
     </a>
   </div>
   <h1
@@ -29,25 +32,16 @@ import GitHubIcon from "@/components/icons/GitHub.astro";
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    <strong>Desarrollador de Software Full Stack</strong> y freelancer. Construyo
-    soluciones integrales de extremo a extremo: desde aplicaciones móviles con <strong
-      >Flutter</strong
-    > hasta sistemas con <strong>Inteligencia Artificial</strong> y reconocimiento
-    facial. Estudiante de Ingeniería en Sistemas.
-  </p>
+    set:html={t("hero.pitch")}
+  />
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:garrapatin12100@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      {t("hero.contact")}
     </SocialPill>
     <SocialPill href="https://github.com/Ozelot12100">
       <GitHubIcon class="size-4" />
       GitHub
     </SocialPill>
-    <!-- <SocialPill href="https://linkedin.com/in/midudev">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill> -->
   </nav>
 </div>

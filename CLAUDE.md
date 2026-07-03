@@ -30,14 +30,19 @@ pnpm preview      # sirve dist/ localmente
 ## Arquitectura
 
 - Sitio 100% estático. Astro renderiza `.astro` a HTML en build; el único JS de cliente está en `<script>` de `Header.astro` (resaltado de sección al hacer scroll) y en `ThemeToggle.astro`.
-- `src/pages/index.astro` es la única página real de contenido: importa y ensambla las secciones dentro de `Layout.astro`.
+- **Bilingüe (i18n nativo de Astro)**: español en `/` e inglés en `/en/` (`defaultLocale: 'es'`, `prefixDefaultLocale: false` en `astro.config.mjs`). El ensamblado de secciones vive en `src/components/HomeSections.astro`; `src/pages/index.astro` (ES) y `src/pages/en/index.astro` (EN) son wrappers idénticos que solo cambian por su URL. Cada componente deriva su idioma con `getLangFromUrl(Astro.url)` (helper de `src/i18n/ui.ts`), sin prop drilling.
 - `src/pages/components.astro` es un catálogo de componentes (design system), no parte del portafolio público.
 - `Layout.astro` define `<head>`, el fondo con gradiente, `Header`, `Footer`, estilos globales y las View Transitions.
 - Alias de import: `@/*` → `src/*` (ver `tsconfig.json`). Algunos componentes usan rutas relativas; ambas conviven.
 
 ## Dónde vive el contenido
 
-No hay CMS ni archivos de datos. El contenido está **hardcodeado dentro de cada componente**, normalmente como arrays/objetos en el frontmatter:
+No hay CMS ni archivos de datos. El sitio es **bilingüe (ES/EN)**, así que **todo texto visible existe en ambos idiomas**:
+
+- **Texto de "chrome" y prosa** (nav, títulos de sección, pitch del Hero, biografía, footer, botones, meta): en el diccionario `src/i18n/ui.ts` (objetos `ui.es` y `ui.en`). Se leen con `useTranslations(lang)`. La prosa con `<strong>` (Hero/AboutMe) se guarda como HTML y se pinta con `set:html`.
+- **Contenido estructurado** (`Projects.astro` → `PROJECTS`, `Experience.astro` → `EXPERIENCE`, `Skills.astro` → `SKILLS`): vive en su componente, con los campos de texto como `{ es, en }` y se elige con `[lang]`. Los nombres de tecnología en `TAGS`/skills que son iguales en ambos idiomas quedan como string plano.
+
+**Al editar contenido, hazlo en los DOS idiomas.** El resto de datos por componente:
 
 - `Hero.astro` — nombre, pitch (Full Stack + IA), email, enlaces sociales.
 - `Experience.astro` — array `EXPERIENCE`.

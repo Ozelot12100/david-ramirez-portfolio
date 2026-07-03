@@ -1,11 +1,17 @@
 ---
+import { getLangFromUrl } from "@/i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+
+// Los ítems son strings iguales en ambos idiomas, salvo los que se envuelven
+// en { es, en } cuando el texto cambia.
 const SKILLS = [
   {
-    title: "Lenguajes",
+    title: { es: "Lenguajes", en: "Languages" },
     items: ["Dart", "TypeScript", "JavaScript", "Python", "C#", "SQL", "Bash"],
   },
   {
-    title: "Frontend y Móvil",
+    title: { es: "Frontend y Móvil", en: "Frontend & Mobile" },
     items: [
       "Flutter",
       "React",
@@ -17,7 +23,7 @@ const SKILLS = [
     ],
   },
   {
-    title: "Backend y Bases de Datos",
+    title: { es: "Backend y Bases de Datos", en: "Backend & Databases" },
     items: [
       "FastAPI",
       "Supabase",
@@ -30,20 +36,23 @@ const SKILLS = [
     ],
   },
   {
-    title: "IA y Visión por Computadora",
+    title: { es: "IA y Visión por Computadora", en: "AI & Computer Vision" },
     items: [
-      "Reconocimiento facial (dlib)",
+      {
+        es: "Reconocimiento facial (dlib)",
+        en: "Facial recognition (dlib)",
+      },
       "Google ML Kit",
       "OpenCV",
       "NumPy",
-      "Whisper (transcripción)",
+      { es: "Whisper (transcripción)", en: "Whisper (transcription)" },
     ],
   },
   {
-    title: "DevOps y Herramientas",
+    title: { es: "DevOps y Herramientas", en: "DevOps & Tools" },
     items: [
       "Docker",
-      "Git y GitHub",
+      { es: "Git y GitHub", en: "Git & GitHub" },
       "Vercel",
       "CI/CD (GitHub Actions)",
       "PyInstaller",
@@ -54,6 +63,10 @@ const SKILLS = [
     ],
   },
 ];
+
+type SkillItem = string | { es: string; en: string };
+const label = (item: SkillItem) =>
+  typeof item === "string" ? item : item[lang];
 ---
 
 <div class="flex flex-col gap-8">
@@ -61,12 +74,12 @@ const SKILLS = [
     SKILLS.map((group) => (
       <div>
         <h3 class="mb-3 text-lg font-semibold text-yellow-500 dark:text-yellow-300">
-          {group.title}
+          {group.title[lang]}
         </h3>
         <ul class="flex flex-wrap gap-2">
           {group.items.map((item) => (
             <li class="rounded-full border border-gray-300 bg-gray-100/60 px-3 py-1 text-sm text-gray-800 transition hover:border-yellow-500/60 dark:border-gray-700 dark:bg-gray-800/60 dark:text-gray-200 dark:hover:border-yellow-300/60">
-              {item}
+              {label(item)}
             </li>
           ))}
         </ul>

@@ -4,6 +4,7 @@ import "@fontsource-variable/onest"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
+import { getLangFromUrl, getAlternateUrls } from "@/i18n/ui"
 
 interface Props {
   title: string
@@ -11,12 +12,16 @@ interface Props {
 }
 
 const { description, title } = Astro.props
+const lang = getLangFromUrl(Astro.url)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const ogImageURL = new URL("/david-ramirez.png", Astro.site)
+const alternates = getAlternateUrls(Astro.url, Astro.site)
+const ogLocale = lang === "en" ? "en_US" : "es_MX"
+const ogLocaleAlt = lang === "en" ? "es_MX" : "en_US"
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -25,12 +30,16 @@ const ogImageURL = new URL("/david-ramirez.png", Astro.site)
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="es" href={alternates.es} />
+    <link rel="alternate" hreflang="en" href={alternates.en} />
+    <link rel="alternate" hreflang="x-default" href={alternates.es} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

@@ -1,12 +1,24 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import { getLangFromUrl } from "@/i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+
 const EXPERIENCE = [
   {
-    date: "2022 - Actualidad",
-    title: "Desarrollador de Software Freelance",
-    company: "Proyectos Independientes / Negocios Locales",
-    description:
-      "Desarrollo de soluciones de software a medida para negocios reales en México y Estados Unidos: desde un sistema de asistencia con reconocimiento facial (IA) y plataformas multi-tenant de marca blanca, hasta sistemas de punto de venta en tiempo real y sitios web optimizados para conversión. Backend escalable con Python/FastAPI y Supabase, apps multiplataforma con Flutter (Android, Windows y web) y arquitecturas modernas (MVVM, Clean Architecture, offline-first).",
+    date: { es: "2022 - Actualidad", en: "2022 - Present" },
+    title: {
+      es: "Desarrollador de Software Freelance",
+      en: "Freelance Software Developer",
+    },
+    company: {
+      es: "Proyectos Independientes / Negocios Locales",
+      en: "Independent Projects / Local Businesses",
+    },
+    description: {
+      es: "Desarrollo de soluciones de software a medida para negocios reales en México y Estados Unidos: desde un sistema de asistencia con reconocimiento facial (IA) y plataformas multi-tenant de marca blanca, hasta sistemas de punto de venta en tiempo real y sitios web optimizados para conversión. Backend escalable con Python/FastAPI y Supabase, apps multiplataforma con Flutter (Android, Windows y web) y arquitecturas modernas (MVVM, Clean Architecture, offline-first).",
+      en: "I develop custom software solutions for real businesses in Mexico and the United States: from a facial-recognition (AI) attendance system and white-label multi-tenant platforms, to real-time point-of-sale systems and conversion-optimized websites. Scalable backends with Python/FastAPI and Supabase, cross-platform apps with Flutter (Android, Windows and web), and modern architectures (MVVM, Clean Architecture, offline-first).",
+    },
   },
 ];
 ---
@@ -15,7 +27,12 @@ const EXPERIENCE = [
   {
     EXPERIENCE.map((experience) => (
       <li class="">
-        <ExperienceItem {...experience} />
+        <ExperienceItem
+          title={experience.title[lang]}
+          company={experience.company[lang]}
+          date={experience.date[lang]}
+          description={experience.description[lang]}
+        />
       </li>
     ))
   }

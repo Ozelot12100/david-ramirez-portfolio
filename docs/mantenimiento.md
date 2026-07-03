@@ -13,6 +13,19 @@ git add ... && git commit && git push   # el push despliega a producción
 > **No usar `npm install`** — desincroniza el lockfile y rompe el deploy (ver
 > [despliegue-vercel.md](./despliegue-vercel.md)).
 
+## Idiomas (ES / EN)
+
+El sitio es bilingüe: **español en `/`, inglés en `/en/`**. Todo texto visible existe
+en ambos idiomas, así que **cada cambio de contenido se hace en los dos**:
+
+- Texto general (nav, títulos, Hero, biografía, footer, botones): `src/i18n/ui.ts`
+  (objetos `ui.es` y `ui.en`).
+- Contenido estructurado (proyectos, experiencia, skills): en su componente, con los
+  campos como `{ es, en }`.
+
+Prueba ambos con `pnpm dev`: `localhost:4321/` y `localhost:4321/en/`. El botón `ES/EN`
+del encabezado alterna entre ellos.
+
 ## Dónde se edita cada cosa
 
 | Quiero cambiar… | Archivo |
@@ -36,15 +49,22 @@ Mantenerlo sincronizado con lo que muestra la web.
    node scripts/optimizar-imagenes.mjs public/projects/MiProyecto.png
    # genera MiProyecto.webp — borra el .png después de verificar
    ```
-3. **Registrar** en `src/components/Projects.astro`, array `PROJECTS`:
+3. **Registrar** en `src/components/Projects.astro`, array `PROJECTS`. El sitio es
+   bilingüe, así que `title`, `description` y `alt` van en los **dos idiomas**:
    ```js
    {
-     title: "Nombre del proyecto",
-     description: "Qué hace y qué problema resuelve.",
-     link: "https://... o vacío",     // botón "Preview" (solo si hay demo pública)
+     title: { es: "Nombre del proyecto", en: "Project name" },
+     description: {
+       es: "Qué hace y qué problema resuelve.",
+       en: "What it does and what problem it solves.",
+     },
+     link: "https://... o vacío",     // botón "Ver en vivo" (solo si hay demo pública)
      github: "",                        // ⚠️ ver nota de repos privados
      image: "/projects/MiProyecto.webp",
-     alt: "Descripción de la captura para accesibilidad",
+     alt: {
+       es: "Descripción de la imagen para accesibilidad",
+       en: "Image description for accessibility",
+     },
      tags: [TAGS.FLUTTER, ...],         // añadir a TAGS si falta la tecnología
    }
    ```
