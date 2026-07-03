@@ -10,6 +10,8 @@ const THEMES = ["Light", "Dark", "System"]
   <button
     transition:persist
     id="theme-toggle-btn"
+    aria-haspopup="true"
+    aria-expanded="false"
     class="appearance-none border-none flex hover:scale-125 transition"
   >
     <span class="sr-only">Elige el tema</span>
@@ -31,8 +33,10 @@ const THEMES = ["Light", "Dark", "System"]
     <ul>
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
-            {theme}
+          <li>
+            <button class="themes-menu-option w-full text-left px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+              {theme}
+            </button>
           </li>
         ))
       }
@@ -100,12 +104,18 @@ const THEMES = ["Light", "Dark", "System"]
 
   updateTheme()
 
-  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+  const toggleBtn = document.getElementById("theme-toggle-btn")
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+  document.addEventListener("click", () => {
+    themesMenu.classList.remove("open")
+    toggleBtn.setAttribute("aria-expanded", "false")
+  })
+
+  toggleBtn.addEventListener("click", (e) => {
     e.stopPropagation()
     const isClosed = !themesMenu.classList.contains("open")
     themesMenu.classList[isClosed ? "add" : "remove"]("open")
+    toggleBtn.setAttribute("aria-expanded", String(isClosed))
   })
 
   document.querySelectorAll(".themes-menu-option").forEach((element) => {

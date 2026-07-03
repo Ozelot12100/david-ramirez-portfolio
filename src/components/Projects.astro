@@ -53,14 +53,17 @@ const TAGS = {
     icon: DotNet,
   },
 };
+// Los repos de estos proyectos son privados (trabajos para clientes reales):
+// `github` queda vacío para que no se muestre el botón "Code" con un enlace roto.
 const PROJECTS = [
   {
     title: "Bling Round Robin (Gestión de Pádel)",
     description:
       "Aplicación multiplataforma para la gestión de torneos de pádel con modos de administrador y espectador. Implementa algoritmos para la generación automática de partidos y gestión de grupos.",
     link: "",
-    github: "https://github.com/Ozelot12100/bling-round-robin",
-    image: "/projects/BlingRR.png",
+    github: "",
+    image: "/projects/BlingRR.webp",
+    alt: "Captura de Bling Round Robin mostrando la gestión de un torneo de pádel",
     tags: [TAGS.FLUTTER, TAGS.SUPABASE],
   },
   {
@@ -68,8 +71,9 @@ const PROJECTS = [
     description:
       "Sitio web moderno de renta vacacional de lujo. Optimizado para SEO, velocidad de carga y conversión de reservas.",
     link: "https://www.lacasaderamona.com",
-    github: "https://github.com/Ozelot12100/la-casa-de-ramona-web",
-    image: "/projects/Lacasaderamona.png",
+    github: "",
+    image: "/projects/Lacasaderamona.webp",
+    alt: "Captura del sitio web de renta vacacional La Casa de Ramona",
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
   },
   {
@@ -77,8 +81,9 @@ const PROJECTS = [
     description:
       "Sistema completo para restaurante de sushi. Incluye app de delivery para clientes y panel administrativo para gestión de pedidos, menú y repartidores.",
     link: "",
-    github: "https://github.com/Ozelot12100/checador-facial-ai-frontend",
-    image: "/projects/RockySushi.png",
+    github: "",
+    image: "/projects/RockySushi.webp",
+    alt: "Captura del sistema de Rocky Sushi con el panel de administración de pedidos",
     tags: [TAGS.FLUTTER, TAGS.DOTNET],
   },
 ];
@@ -86,12 +91,12 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, alt, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              alt={alt}
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
