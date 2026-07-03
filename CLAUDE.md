@@ -39,13 +39,16 @@ pnpm preview      # sirve dist/ localmente
 
 No hay CMS ni archivos de datos. El contenido está **hardcodeado dentro de cada componente**, normalmente como arrays/objetos en el frontmatter:
 
-- `Hero.astro` — nombre, pitch, email, enlaces sociales.
+- `Hero.astro` — nombre, pitch (Full Stack + IA), email, enlaces sociales.
 - `Experience.astro` — array `EXPERIENCE`.
-- `Projects.astro` — objeto `TAGS` (tecnologías) y array `PROJECTS`.
+- `Projects.astro` — objeto `TAGS` (tecnologías) y array `PROJECTS` (6 proyectos: Sistema Biométrico/IA, Palaliga, Hogarly, DropWear, La Casa de Ramona, Estrella Brothers). Cada proyecto tiene `link` (demo en vivo, solo si es pública), `github` (vacío = repo privado de cliente), `image` y `alt`.
+- `Skills.astro` — array `SKILLS` (tecnologías agrupadas por categoría). Se muestra en la sección "Tecnologías" (`id="tecnologias"`).
 - `AboutMe.astro` — biografía (texto en el markup).
 - `Header.astro` / `Footer.astro` — navegación, email de contacto.
 
-Fuente de verdad del contenido redactado: `Info para Portafolio David Alberto.md`.
+Iconos de tecnologías en `src/components/icons/` (SVG que aceptan `class` por props). Al añadir un tag nuevo en `TAGS`, crear su icono siguiendo el patrón existente.
+
+Fuente de verdad del contenido redactado: `Info para Portafolio David Alberto.md` (parcialmente desfasado; el catálogo real de proyectos y tecnologías vive ya en `Projects.astro`/`Skills.astro`).
 
 Imágenes en `public/` (servidas en la raíz): `david-ramirez.png` (perfil), `projects/*.png`.
 
@@ -57,11 +60,11 @@ Imágenes en `public/` (servidas en la raíz): `david-ramirez.png` (perfil), `pr
 
 ## Notas y deuda técnica conocida
 
-- **Los repos de los proyectos mostrados son privados** (trabajos pagados por clientes). Por eso las entradas de `PROJECTS` tienen `github: ""` — el botón "Code" solo se renderiza si hay URL. No volver a enlazar esos repos salvo que se hagan públicos o haya permiso del cliente.
-- Imágenes de proyectos en `public/projects/*.webp` (optimizadas con sharp, 1200px de ancho, q80). Si se añade un proyecto nuevo, convertir la captura a WebP igual; no subir PNG de 1-2 MB.
+- **Los repos de los proyectos mostrados son privados** (trabajos pagados por clientes). Por eso las entradas de `PROJECTS` tienen `github: ""` — el botón "Código" solo se renderiza si hay URL. No volver a enlazar esos repos salvo que se hagan públicos o haya permiso del cliente. Las demos en vivo (`link`) sí son públicas y verificadas (Palaliga, Hogarly, La Casa de Ramona, Estrella Brothers).
+- Imágenes de proyectos en `public/projects/*.webp` (optimizadas con sharp vía `scripts/optimizar-imagenes.mjs`). DropWear y Hogarly usan logo/branding; el resto, capturas o foto real. Si se añade un proyecto nuevo, convertir la imagen a WebP igual; no subir PNG de 1-2 MB.
 - El sitemap excluye `/components` (catálogo interno) vía `filter` en `astro.config.mjs`, y `robots.txt` lo tiene en `Disallow`. La página 404 la excluye la integración automáticamente.
 - SEO por hacer: JSON-LD (Person), y una imagen OG dedicada de 1200×630 (hoy `og:image` usa `/david-ramirez.png`, que se conserva en PNG precisamente para eso — los crawlers manejan mal WebP).
-- Contenido pendiente (ver `Info para Portafolio David Alberto.md`): sección Skills, proyecto "Checador Facial con IA", perfil de LinkedIn (icono comentado en `Hero.astro`).
+- Contenido pendiente: perfil de LinkedIn (icono comentado en `Hero.astro`), imagen OG dedicada 1200×630, y opcionalmente reemplazar el logo de DropWear/Hogarly por capturas reales de la UI.
 - Dependencias de febrero 2024: Astro 4.4 (existe Astro 5) y Tailwind 3.4 (existe v4). Actualizar con calma en una rama.
 
 ## Origen

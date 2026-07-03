@@ -71,5 +71,10 @@ con el cliente.
 ## Tareas pendientes conocidas
 
 Ver la sección "Notas y deuda técnica conocida" de [CLAUDE.md](../CLAUDE.md):
-sección Skills, proyecto Checador Facial IA, perfil de LinkedIn, imagen OG dedicada
-1200×630, upgrade a Astro 5 / Tailwind 4.
+perfil de LinkedIn, imagen OG dedicada 1200×630, reemplazar el branding de
+DropWear/Hogarly por capturas reales de UI, y upgrade a Astro 5 / Tailwind 4.
+
+> El portafolio muestra 6 proyectos (Sistema Biométrico/IA, Palaliga, Hogarly,
+> DropWear, La Casa de Ramona, Estrella Brothers) y una sección de Tecnologías
+> por categorías. El inventario completo de proyectos de David vive en `c:\dev`
+> (hay más: homelab/DevOps, scripts de IA, ejercicios de CS) por si se quiere ampliar.

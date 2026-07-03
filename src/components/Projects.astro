@@ -8,8 +8,10 @@ import Python from "./icons/Python.astro";
 import Flutter from "./icons/Flutter.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import React from "./icons/React.astro";
-import DotNet from "./icons/DotNet.astro";
 import Supabase from "./icons/Supabase.astro";
+import TypeScript from "./icons/TypeScript.astro";
+import FastAPI from "./icons/FastAPI.astro";
+import Ai from "./icons/Ai.astro";
 
 const TAGS = {
   NEXT: {
@@ -24,13 +26,18 @@ const TAGS = {
   },
   SUPABASE: {
     name: "Supabase",
-    class: "bg-[#000000] text-white",
+    class: "bg-[#3ECF8E] text-black",
     icon: Supabase,
   },
   PYTHON: {
     name: "Python",
     class: "bg-[#3776AB] text-white",
     icon: Python,
+  },
+  FASTAPI: {
+    name: "FastAPI",
+    class: "bg-[#009688] text-white",
+    icon: FastAPI,
   },
   FLUTTER: {
     name: "Flutter",
@@ -47,44 +54,80 @@ const TAGS = {
     class: "bg-[#61DAFB] text-black",
     icon: React,
   },
-  DOTNET: {
-    name: ".NET / C#",
-    class: "bg-[#512BD4] text-white",
-    icon: DotNet,
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
+  AI: {
+    name: "IA / Visión",
+    class: "bg-[#6D28D9] text-white",
+    icon: Ai,
   },
 };
-// Los repos de estos proyectos son privados (trabajos para clientes reales):
-// `github` queda vacío para que no se muestre el botón "Code" con un enlace roto.
+// Trabajos para clientes reales: los repos son privados, así que `github` queda
+// vacío (el botón "Código" solo se muestra si hay URL). `link` apunta a la demo
+// pública en vivo cuando existe.
 const PROJECTS = [
   {
-    title: "Bling Round Robin (Gestión de Pádel)",
+    title: "Sistema Biométrico de Asistencia (IA facial)",
     description:
-      "Aplicación multiplataforma para la gestión de torneos de pádel con modos de administrador y espectador. Implementa algoritmos para la generación automática de partidos y gestión de grupos.",
-    link: "",
-    github: "",
-    image: "/projects/BlingRR.webp",
-    alt: "Captura de Bling Round Robin mostrando la gestión de un torneo de pádel",
-    tags: [TAGS.FLUTTER, TAGS.SUPABASE],
-  },
-  {
-    title: "La Casa de Ramona - Web",
-    description:
-      "Sitio web moderno de renta vacacional de lujo. Optimizado para SEO, velocidad de carga y conversión de reservas.",
-    link: "https://www.lacasaderamona.com",
-    github: "",
-    image: "/projects/Lacasaderamona.webp",
-    alt: "Captura del sitio web de renta vacacional La Casa de Ramona",
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
-  },
-  {
-    title: "Rocky Sushi (Delivery & Admin)",
-    description:
-      "Sistema completo para restaurante de sushi. Incluye app de delivery para clientes y panel administrativo para gestión de pedidos, menú y repartidores.",
+      "Solución completa de control de asistencia con reconocimiento facial para Rocky Sushi, diseñada como producto de marca blanca. Backend en Python/FastAPI con reconocimiento facial (dlib, embeddings de 128 dimensiones), app Flutter (kiosco + panel admin) para Android y Windows, motor de nómina y turnos, e instalador para Windows.",
     link: "",
     github: "",
     image: "/projects/RockySushi.webp",
-    alt: "Captura del sistema de Rocky Sushi con el panel de administración de pedidos",
-    tags: [TAGS.FLUTTER, TAGS.DOTNET],
+    alt: "Panel administrativo del sistema biométrico de asistencia de Rocky Sushi",
+    tags: [TAGS.AI, TAGS.FASTAPI, TAGS.FLUTTER, TAGS.SUPABASE],
+  },
+  {
+    title: "Palaliga — Gestión de Ligas de Pádel",
+    description:
+      "Plataforma multi-tenant (marca blanca) para crear y administrar ligas de pádel: generación automática de calendario round-robin, tabla de clasificación en tiempo real y cuadros de playoffs. Aislamiento por organización con Row-Level Security y actualizaciones en vivo.",
+    link: "https://palaliga.vercel.app",
+    github: "",
+    image: "/projects/BlingRR.webp",
+    alt: "Interfaz de Palaliga mostrando la gestión de una liga de pádel",
+    tags: [TAGS.FLUTTER, TAGS.SUPABASE],
+  },
+  {
+    title: "Hogarly — Organización del hogar en familia",
+    description:
+      "PWA colaborativa para organizar el hogar: tareas con recompensas por puntos, lista de compras en vivo, comidas, calendario y notificaciones push. Construida con Next.js y Supabase, con monitorización de errores (Sentry) y pruebas end-to-end.",
+    link: "https://app.hogarly.app",
+    github: "",
+    image: "/projects/Hogarly.webp",
+    alt: "Aplicación Hogarly para organizar tareas y compras del hogar en familia",
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.SUPABASE, TAGS.TAILWIND],
+  },
+  {
+    title: "DropWear — Punto de Venta e Inventario",
+    description:
+      "Sistema POS y de gestión de inventario en tiempo real para una tienda de ropa, con control de acceso por roles (socio, vendedor, administrador). Inventario sincronizado en vivo entre dispositivos mediante Supabase Realtime.",
+    link: "",
+    github: "",
+    image: "/projects/DropWear.webp",
+    alt: "Logotipo de DropWear, sistema de punto de venta e inventario",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.SUPABASE, TAGS.TAILWIND],
+  },
+  {
+    title: "La Casa de Ramona — Web",
+    description:
+      "Sitio web bilingüe de renta vacacional de lujo en Puerto Peñasco. Optimizado para SEO, velocidad de carga y conversión de reservas, con formulario de contacto y reservación directa por WhatsApp.",
+    link: "https://www.lacasaderamona.com",
+    github: "",
+    image: "/projects/Lacasaderamona.webp",
+    alt: "Sitio web de la renta vacacional de lujo La Casa de Ramona",
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Estrella Brothers Carpentry — Web",
+    description:
+      "Sitio de portafolio bilingüe para una carpintería en Phoenix, Arizona. Galería de proyectos con comparador antes/después, contenido tipado (Content Collections + Zod), optimización de imágenes y SEO local con datos estructurados.",
+    link: "https://www.estrellabrotherscarpentry.com",
+    github: "",
+    image: "/projects/EstrellaBrothers.webp",
+    alt: "Trabajo de carpintería de Estrella Brothers: construcción de un patio techado",
+    tags: [TAGS.ASTRO, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
 ];
 ---
@@ -129,13 +172,13 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
-                  Code
+                  Código
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Preview
+                  Ver en vivo
                 </LinkButton>
               )}
             </footer>

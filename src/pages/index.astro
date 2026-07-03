@@ -7,6 +7,8 @@ import CodeIcon from "@/components/icons/Code.astro";
 import Experience from "@/components/Experience.astro";
 import ProfileCheck from "@/components/icons/ProfileCheck.astro";
 import Projects from "@/components/Projects.astro";
+import Skills from "@/components/Skills.astro";
+import StackIcon from "@/components/icons/Stack.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
@@ -14,7 +16,7 @@ import TitleSection from "@/components/TitleSection.astro";
 
 <Layout
   title="Portafolio de David A. Ramírez - Desarrollador de Software Full Stack & Freelancer"
-  description="Portafolio de David Alberto Ramírez Vargas. Desarrollador de Software Full Stack especializado en Flutter, Python y soluciones web."
+  description="Portafolio de David Alberto Ramírez Vargas. Desarrollador de Software Full Stack especializado en Flutter, Python, Inteligencia Artificial y soluciones web a medida."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
@@ -36,6 +38,14 @@ import TitleSection from "@/components/TitleSection.astro";
         Proyectos
       </TitleSection>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="tecnologias">
+      <TitleSection>
+        <StackIcon class="size-8" />
+        Tecnologías
+      </TitleSection>
+      <Skills />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">

@@ -1,0 +1,78 @@
+---
+const SKILLS = [
+  {
+    title: "Lenguajes",
+    items: ["Dart", "TypeScript", "JavaScript", "Python", "C#", "Ruby", "SQL", "Bash"],
+  },
+  {
+    title: "Frontend y Móvil",
+    items: [
+      "Flutter",
+      "React",
+      "Next.js",
+      "Astro",
+      "React Native",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "PWA",
+    ],
+  },
+  {
+    title: "Backend y Bases de Datos",
+    items: [
+      "FastAPI",
+      "Supabase",
+      "PostgreSQL",
+      "SQLite",
+      "SQLAlchemy",
+      "Drift",
+      "Edge Functions (Deno)",
+      "REST APIs",
+      "Row-Level Security",
+    ],
+  },
+  {
+    title: "IA y Visión por Computadora",
+    items: [
+      "Reconocimiento facial (dlib)",
+      "Google ML Kit",
+      "OpenCV",
+      "NumPy",
+      "Whisper (transcripción)",
+    ],
+  },
+  {
+    title: "DevOps y Herramientas",
+    items: [
+      "Docker",
+      "Git y GitHub",
+      "Vercel",
+      "CI/CD (GitHub Actions)",
+      "PyInstaller",
+      "Sentry",
+      "Linux / Ubuntu Server",
+      "pytest",
+      "Playwright",
+    ],
+  },
+];
+---
+
+<div class="flex flex-col gap-8">
+  {
+    SKILLS.map((group) => (
+      <div>
+        <h3 class="mb-3 text-lg font-semibold text-yellow-500 dark:text-yellow-300">
+          {group.title}
+        </h3>
+        <ul class="flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <li class="rounded-full border border-gray-300 bg-gray-100/60 px-3 py-1 text-sm text-gray-800 transition hover:border-yellow-500/60 dark:border-gray-700 dark:bg-gray-800/60 dark:text-gray-200 dark:hover:border-yellow-300/60">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
