@@ -26,18 +26,18 @@ export const ui = {
 
     "hero.badge": "Disponible para trabajar",
     "hero.pitch":
-      "<strong>Desarrollador de Software Full Stack</strong> y freelancer. Construyo soluciones integrales de extremo a extremo: desde aplicaciones móviles con <strong>Flutter</strong> hasta sistemas con <strong>Inteligencia Artificial</strong> y reconocimiento facial. Estudiante de Ingeniería en Sistemas.",
+      "<strong>Desarrollador de Software Full Stack.</strong> Llevo productos completos de la idea a producción yo solo: <strong>backend con IA</strong>, apps móviles y de escritorio, e instaladores listos para el cliente. He construido desde un sistema de <strong>reconocimiento facial</strong> hasta plataformas SaaS multi-tenant, para negocios en <strong>México y Estados Unidos</strong>.",
     "hero.contact": "Contáctame",
 
     "project.viewLive": "Ver en vivo",
     "project.code": "Código",
 
     "about.p1":
-      "¡Hola! Soy David, un desarrollador apasionado por la resolución de problemas a través del código. Mi camino en el desarrollo de software comenzó hace dos años, y desde 2023 complemento esta pasión con mis estudios en <strong>Ingeniería en Sistemas Computacionales</strong>.",
+      "Soy David, desarrollador de software full stack. Lo que me distingue: <strong>construyo productos completos de principio a fin</strong>, yo solo. Diseño la base de datos, levanto el backend, desarrollo la app móvil o de escritorio y la entrego empaquetada y desplegada, sin depender de un equipo para llevar una idea a producción.",
     "about.p2":
-      "Mi enfoque es versátil: me siento igual de cómodo diseñando interfaces intuitivas como optimizando consultas en bases de datos SQL o desarrollando APIs en Python. Como freelancer, me especializo en digitalizar negocios locales en mi ciudad, <strong>Puerto Peñasco</strong>.",
+      "Mi trabajo va de lo complejo a lo comercial: un <strong>sistema de asistencia con reconocimiento facial (IA)</strong> en producción, plataformas <strong>SaaS multi-tenant</strong> en tiempo real y sitios web que convierten. Elijo la herramienta correcta para cada reto (<strong>Flutter, TypeScript, Python/FastAPI, C#</strong>), en frontend, backend, bases de datos o IA.",
     "about.p3":
-      "Me motiva ver cómo una aplicación o una web bien construida puede transformar la operación de un negocio. Mi stack es diverso (<strong>Flutter, TypeScript, Python, C#, Astro</strong>), lo que me permite elegir la herramienta adecuada para cada reto, ya sea en el frontend, backend, la gestión de bases de datos o la integración de <strong>Inteligencia Artificial</strong>.",
+      "Trabajo como freelancer para negocios en <strong>Puerto Peñasco y Estados Unidos</strong> —bilingüe y en el mismo huso horario que EE. UU.— mientras estudio <strong>Ingeniería en Sistemas Computacionales</strong>. Me mueve resolver problemas reales de negocio con software bien construido: rápido, mantenible y que de verdad se use.",
 
     "footer.about": "Sobre mí",
     "footer.contact": "Contacto",
@@ -68,18 +68,18 @@ export const ui = {
 
     "hero.badge": "Available for work",
     "hero.pitch":
-      "<strong>Full Stack Software Developer</strong> and freelancer. I build complete, end-to-end solutions — from mobile apps with <strong>Flutter</strong> to systems powered by <strong>Artificial Intelligence</strong> and facial recognition. Systems Engineering student.",
+      "<strong>Full Stack Software Developer.</strong> I take complete products from idea to production on my own: <strong>AI-powered backends</strong>, mobile and desktop apps, and client-ready installers. I've built everything from a <strong>facial-recognition</strong> system to multi-tenant SaaS platforms, for businesses across <strong>Mexico and the United States</strong>.",
     "hero.contact": "Contact me",
 
     "project.viewLive": "View live",
     "project.code": "Code",
 
     "about.p1":
-      "Hi! I'm David, a developer passionate about solving problems through code. My journey in software development began two years ago, and since 2023 I've complemented that passion with my studies in <strong>Computer Systems Engineering</strong>.",
+      "I'm David, a full stack software developer. What sets me apart: <strong>I build complete products end to end</strong>, on my own. I design the database, stand up the backend, build the mobile or desktop app, and ship it packaged and deployed — no team needed to take an idea to production.",
     "about.p2":
-      "My approach is versatile: I'm equally comfortable designing intuitive interfaces, optimizing SQL database queries, or building APIs in Python. As a freelancer, I specialize in digitizing local businesses in my city, <strong>Puerto Peñasco</strong>.",
+      "My work ranges from the complex to the commercial: a <strong>facial-recognition (AI) attendance system</strong> running in production, real-time <strong>multi-tenant SaaS</strong> platforms, and websites that convert. I pick the right tool for each challenge (<strong>Flutter, TypeScript, Python/FastAPI, C#</strong>) — across frontend, backend, databases, and AI.",
     "about.p3":
-      "It motivates me to see how a well-built app or website can transform how a business operates. My stack is diverse (<strong>Flutter, TypeScript, Python, C#, Astro</strong>), which lets me pick the right tool for each challenge — whether on the frontend, backend, database management, or integrating <strong>Artificial Intelligence</strong>.",
+      "I work as a freelancer for businesses in <strong>Puerto Peñasco and the United States</strong> — bilingual, and in the same time zone as the U.S. — while studying <strong>Computer Systems Engineering</strong>. I'm driven by solving real business problems with well-built software: fast, maintainable, and actually used.",
 
     "footer.about": "About",
     "footer.contact": "Contact",
