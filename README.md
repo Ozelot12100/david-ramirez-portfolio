@@ -16,7 +16,9 @@ Construido con **Astro** + **Tailwind CSS**. Sitio estático, rápido y orientad
 - **[Astro](https://astro.build/) 4.4** — generador de sitios estáticos.
 - **[Tailwind CSS](https://tailwindcss.com/) 3.4** — estilos utilitarios.
 - **TypeScript** — chequeo de tipos (`astro check` en el build).
-- **astro-robots-txt** — generación de `robots.txt`.
+- **i18n nativo de Astro** — sitio **bilingüe** (ES en `/`, EN en `/en/`).
+- **@astrojs/sitemap** — sitemap con `hreflang`; **astro-robots-txt** — `robots.txt`.
+- **@vercel/analytics** — Web Analytics (visitas + parámetros UTM).
 - **@fontsource-variable/onest** — tipografía Onest.
 - **View Transitions** de Astro para navegación suave.
 
@@ -48,30 +50,37 @@ Desde la raíz del proyecto:
 │   ├── favicon.svg
 │   └── projects/            # Imágenes de los proyectos
 ├── src/
-│   ├── components/          # Componentes .astro (secciones + UI)
-│   │   └── icons/           # Iconos SVG como componentes
+│   ├── components/            # Componentes .astro (secciones + UI)
+│   │   ├── HomeSections.astro # Ensambla todas las secciones (compartido ES/EN)
+│   │   └── icons/             # Iconos SVG como componentes
+│   ├── i18n/
+│   │   └── ui.ts             # Diccionario ES/EN + helpers de idioma
 │   ├── layouts/
-│   │   └── Layout.astro     # Layout base: <head>, fondo, Header, Footer, estilos globales
+│   │   └── Layout.astro      # Layout base: <head>, fondo, Header, Footer, Analytics
 │   └── pages/
-│       ├── index.astro      # Página principal (ensambla todas las secciones)
-│       └── components.astro  # Catálogo/design system de componentes
-├── astro.config.mjs         # Integraciones y `site` (¡importante para SEO/robots!)
+│       ├── index.astro       # Home ES (/) — wrapper de HomeSections
+│       ├── en/index.astro    # Home EN (/en/) — wrapper idéntico
+│       └── components.astro   # Catálogo/design system de componentes
+├── astro.config.mjs          # Integraciones, i18n y `site` (¡importante para SEO/robots!)
 └── tailwind.config.mjs
 ```
 
 ## ✍️ Dónde editar el contenido
 
-El contenido vive **dentro de los componentes** (no hay CMS ni archivos de datos separados):
+> 🌐 **El sitio es bilingüe (ES en `/`, EN en `/en/`).** Todo texto visible existe en los
+> dos idiomas: edita siempre ambos. Detalle en [`docs/mantenimiento.md`](./docs/mantenimiento.md).
 
-| Sección               | Archivo                                  | Qué contiene                                  |
-| --------------------- | ---------------------------------------- | --------------------------------------------- |
-| Título y meta SEO     | `src/pages/index.astro`                  | `title` y `description` de la página          |
-| Hero (inicio)         | `src/components/Hero.astro`              | Nombre, presentación, email, redes            |
-| Experiencia laboral   | `src/components/Experience.astro`        | Array `EXPERIENCE`                            |
-| Proyectos             | `src/components/Projects.astro`          | Arrays `TAGS` y `PROJECTS`                     |
-| Sobre mí              | `src/components/AboutMe.astro`           | Biografía                                     |
-| Navegación / contacto | `src/components/Header.astro`            | Enlaces del menú y email                      |
-| Pie de página         | `src/components/Footer.astro`            | Email y enlaces                               |
+No hay CMS ni archivos de datos separados. El contenido vive en el diccionario i18n y dentro de los componentes:
+
+| Sección                  | Archivo                                        | Qué contiene                                          |
+| ------------------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| Texto general y meta SEO | `src/i18n/ui.ts`                               | Nav, títulos, pitch/bio, footer, botones, `meta.*` (en `ui.es` y `ui.en`) |
+| Hero (inicio)            | `src/components/Hero.astro`                    | Nombre, email, redes sociales                         |
+| Experiencia laboral      | `src/components/Experience.astro`              | Array `EXPERIENCE`                                    |
+| Proyectos                | `src/components/Projects.astro`                | Arrays `TAGS` y `PROJECTS` (campos `{ es, en }`)      |
+| Tecnologías              | `src/components/Skills.astro`                  | Array `SKILLS` (sección `#tecnologias`)               |
+| Sobre mí                 | `src/components/AboutMe.astro`                 | Biografía                                             |
+| Navegación / contacto    | `src/components/Header.astro` / `Footer.astro` | Enlaces del menú y email                              |
 
 La información de referencia (fuente de verdad del contenido) está en [`Info para Portafolio David Alberto.md`](./Info%20para%20Portafolio%20David%20Alberto.md).
 
@@ -120,6 +129,7 @@ En [`docs/`](./docs/) está la documentación de operación del sitio:
 - [`docs/dominio-y-dns.md`](./docs/dominio-y-dns.md) — dominio, registros DNS en Cloudflare y qué revisar si **"no carga la página"**.
 - [`docs/despliegue-vercel.md`](./docs/despliegue-vercel.md) — pipeline de despliegue, logs y rollback.
 - [`docs/mantenimiento.md`](./docs/mantenimiento.md) — editar contenido, añadir proyectos y optimizar imágenes.
+- [`docs/pendientes.md`](./docs/pendientes.md) — backlog vivo: testimonios, LinkedIn, SEO y upgrades pendientes.
 
 ## 📄 Licencia y créditos
 

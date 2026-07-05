@@ -66,11 +66,12 @@ Imágenes en `public/` (servidas en la raíz): `david-ramirez.png` (perfil), `pr
 ## Notas y deuda técnica conocida
 
 - **Los repos de los proyectos mostrados son privados** (trabajos pagados por clientes). Por eso las entradas de `PROJECTS` tienen `github: ""` — el botón "Código" solo se renderiza si hay URL. No volver a enlazar esos repos salvo que se hagan públicos o haya permiso del cliente. Las demos en vivo (`link`) sí son públicas y verificadas (Palaliga, Hogarly, La Casa de Ramona, Estrella Brothers).
-- Imágenes de proyectos en `public/projects/*.webp` (optimizadas con sharp vía `scripts/optimizar-imagenes.mjs`). DropWear y Hogarly usan logo/branding; el resto, capturas o foto real. Si se añade un proyecto nuevo, convertir la imagen a WebP igual; no subir PNG de 1-2 MB.
+- Imágenes de proyectos en `public/projects/*.webp` (optimizadas con sharp vía `scripts/optimizar-imagenes.mjs`). Todas son captura real de la UI o foto (DropWear: panel "Resumen Ejecutivo" del rediseño; Hogarly: landing en vivo; Rocky Sushi: panel admin). Si se añade un proyecto nuevo, convertir la imagen a WebP igual; no subir PNG de 1-2 MB.
 - El sitemap excluye `/components` (catálogo interno) vía `filter` en `astro.config.mjs`, y `robots.txt` lo tiene en `Disallow`. La página 404 la excluye la integración automáticamente.
-- SEO por hacer: JSON-LD (Person), y una imagen OG dedicada de 1200×630 (hoy `og:image` usa `/david-ramirez.png`, que se conserva en PNG precisamente para eso — los crawlers manejan mal WebP).
-- Contenido pendiente: perfil de LinkedIn (icono comentado en `Hero.astro`), imagen OG dedicada 1200×630, y opcionalmente reemplazar el logo de DropWear/Hogarly por capturas reales de la UI.
-- Dependencias de febrero 2024: Astro 4.4 (existe Astro 5) y Tailwind 3.4 (existe v4). Actualizar con calma en una rama.
+- **Analytics activo:** Vercel Web Analytics está instalado (`@vercel/analytics`, `<Analytics />` en `Layout.astro`) y habilitado en el dashboard del proyecto; recoge visitas y los UTM de los footers de los sitios de cliente.
+- **`og:image` usa `/david-ramirez.png`** (se conserva en PNG a propósito: los crawlers manejan mal WebP). Pendiente una imagen OG dedicada 1200×630.
+- **LinkedIn en el Hero:** hoy `Hero.astro` solo tiene Mail y GitHub. El icono `icons/LinkedIn.astro` existe pero no se usa ahí (solo en el catálogo `components.astro`); añadir el `SocialPill` cuando haya URL de perfil.
+- **Pendientes y roadmap:** ver [`docs/pendientes.md`](docs/pendientes.md) — sección de testimonios, LinkedIn, JSON-LD (Person), imagen OG 1200×630, y upgrade Astro 5 / Tailwind 4.
 
 ## Origen
 

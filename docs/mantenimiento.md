@@ -74,12 +74,12 @@ Mantenerlo sincronizado con lo que muestra la web.
 
 ### ⚠️ Repos privados de clientes
 
-Los proyectos actuales (Bling Round Robin, La Casa de Ramona, Rocky Sushi) son
-**trabajos pagados por clientes y sus repos son privados**. Por eso tienen
-`github: ""` — el botón "Code" solo se renderiza cuando hay URL. **No enlazar repos
-de clientes sin permiso escrito**: un enlace a un repo privado se ve como 404 ante
-cualquier visitante, y hacer el repo público sin permiso puede violar el acuerdo
-con el cliente.
+Los 6 proyectos mostrados (Sistema Biométrico/Rocky Sushi, Palaliga, Hogarly, DropWear,
+La Casa de Ramona, Estrella Brothers) son **trabajos pagados por clientes y sus repos son
+privados**. Por eso tienen `github: ""` — el botón "Code" solo se renderiza cuando hay URL.
+**No enlazar repos de clientes sin permiso escrito**: un enlace a un repo privado se ve
+como 404 ante cualquier visitante, y hacer el repo público sin permiso puede violar el
+acuerdo con el cliente.
 
 ## Checklist antes de dar por terminado un cambio
 
@@ -90,9 +90,9 @@ con el cliente.
 
 ## Tareas pendientes conocidas
 
-Ver la sección "Notas y deuda técnica conocida" de [CLAUDE.md](../CLAUDE.md):
-perfil de LinkedIn, imagen OG dedicada 1200×630, reemplazar el branding de
-DropWear/Hogarly por capturas reales de UI, y upgrade a Astro 5 / Tailwind 4.
+El backlog vivo está en **[pendientes.md](./pendientes.md)**: sección de testimonios,
+dejar LinkedIn presentable y enlazarlo, JSON-LD (Person), imagen OG dedicada 1200×630, y
+upgrade a Astro 5 / Tailwind 4.
 
 > El portafolio muestra 6 proyectos (Sistema Biométrico/IA, Palaliga, Hogarly,
 > DropWear, La Casa de Ramona, Estrella Brothers) y una sección de Tecnologías
