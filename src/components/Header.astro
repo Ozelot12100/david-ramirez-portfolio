@@ -37,15 +37,22 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-10 flex items-center justify-center w-full px-2 mx-auto mt-2"
 >
+  <!--
+    `w-max max-w-full` + `overflow-x-auto`: la píldora mide lo que su contenido
+    (y el header la centra) hasta que no cabe; ahí se limita al ancho de la
+    pantalla y su contenido se desplaza. Sin `justify-center` a propósito: al
+    centrar contenido que desborda, el lado izquierdo queda fuera de pantalla e
+    inalcanzable con scroll (cortaba "Experiencia" en móvil).
+  -->
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex items-center w-max max-w-full px-3 overflow-x-auto text-sm font-medium rounded-full text-gray-600 dark:text-gray-200"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          class="relative block px-2 py-2 transition shrink-0 whitespace-nowrap hover:text-blue-500 dark:hover:text-blue-500"
           aria-label={link.label}
           href={link.url}
         >
@@ -109,6 +116,16 @@ const navItems = [
 
   nav {
     @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
+  /* El carrusel se desplaza en móvil, pero sin barra de scroll visible. */
+  nav {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Edge antiguo */
+  }
+
+  nav::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
   }
 
   @keyframes nav-shadown {
