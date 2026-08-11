@@ -90,11 +90,13 @@ acuerdo con el cliente.
 
 ## Tareas pendientes conocidas
 
-El backlog vivo está en **[pendientes.md](./pendientes.md)**: sección de testimonios,
-dejar LinkedIn presentable y enlazarlo, JSON-LD (Person), imagen OG dedicada 1200×630, y
-upgrade a Astro 5 / Tailwind 4.
+El backlog vivo está en **[pendientes.md](./pendientes.md)**: testimonios, enlazar LinkedIn,
+migrar el correo de contacto al del dominio, evaluación de proyectos nuevos, JSON-LD
+(Person), imagen OG dedicada 1200×630, y upgrade a Astro 5 / Tailwind 4.
 
 > El portafolio muestra 6 proyectos (Sistema Biométrico/IA, Palaliga, Hogarly,
 > DropWear, La Casa de Ramona, Estrella Brothers) y una sección de Tecnologías
-> por categorías. El inventario completo de proyectos de David vive en `c:\dev`
-> (hay más: homelab/DevOps, scripts de IA, ejercicios de CS) por si se quiere ampliar.
+> por categorías. En `c:\dev` hay bastante más trabajo publicable: los candidatos
+> ya evaluados (con veredicto y motivo) están en la tabla de
+> [pendientes.md § 4](./pendientes.md) — **consúltala antes de volver a analizarlos**.
+> Uno de ellos está marcado como "no publicar" por riesgo reputacional.

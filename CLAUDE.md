@@ -71,7 +71,9 @@ Imágenes en `public/` (servidas en la raíz): `david-ramirez.png` (perfil), `pr
 - **Analytics activo:** Vercel Web Analytics está instalado (`@vercel/analytics`, `<Analytics />` en `Layout.astro`) y habilitado en el dashboard del proyecto; recoge visitas y los UTM de los footers de los sitios de cliente.
 - **`og:image` usa `/david-ramirez.png`** (se conserva en PNG a propósito: los crawlers manejan mal WebP). Pendiente una imagen OG dedicada 1200×630.
 - **LinkedIn en el Hero:** hoy `Hero.astro` solo tiene Mail y GitHub. El icono `icons/LinkedIn.astro` existe pero no se usa ahí (solo en el catálogo `components.astro`); añadir el `SocialPill` cuando haya URL de perfil.
-- **Pendientes y roadmap:** ver [`docs/pendientes.md`](docs/pendientes.md) — sección de testimonios, LinkedIn, JSON-LD (Person), imagen OG 1200×630, y upgrade Astro 5 / Tailwind 4.
+- **Correo de contacto:** el sitio muestra `garrapatin12100@gmail.com` en 4 lugares (`Hero.astro` ×2, `Footer.astro`, `Header.astro`). Está pendiente migrarlo a `david@davidramirez.com.mx` — dirección que **ya va impresa en las tarjetas**, así que el cambio corre prisa en cuanto la cuenta exista.
+- **Nav del header:** `.nav-pill` es la píldora visual y contiene un `<nav>` con `overflow-x-auto` (carrusel de enlaces en móvil). Los toggles de tema/idioma van **fuera** de ese `nav` a propósito: `overflow-x` fuerza `overflow-y: auto` y recortaba el menú desplegable del `ThemeToggle`.
+- **Pendientes y roadmap:** ver [`docs/pendientes.md`](docs/pendientes.md) — testimonios, LinkedIn, correo del dominio, **evaluación de proyectos nuevos de `c:\dev`**, JSON-LD (Person), imagen OG 1200×630, y upgrade Astro 5 / Tailwind 4. Ahí también están los **activos de marca** (tarjeta de presentación, banner de LinkedIn) que viven fuera del repo.
 
 ## Origen
 
