@@ -97,23 +97,27 @@ Astro 4.4 → 5 y Tailwind 3.4 → 4. Hacerlo **en una rama**, con calma, verifi
 
 ## Activos de marca (fuera del repo)
 
-Materiales generados en agosto 2026 que **no se versionan aquí** pero forman parte de la
-identidad. Están en `C:\Users\CUENT\Desktop\tarjeta-presentacion\`:
+Materiales que **no se versionan aquí** pero forman parte de la identidad. Están en
+`C:\Users\CUENT\Desktop\tarjeta-presentacion\`:
 
 | Archivo | Qué es |
 | --- | --- |
-| `tarjeta-DavidRamirez-imprenta.pdf` | Tarjeta 90×50 mm + 3 mm de rebase, 2 páginas (frente/reverso), vectorial |
-| `IMPRENTA-{frente,reverso}-300dpi.png` | Misma tarjeta rasterizada — respaldo sin riesgo de sustitución de fuentes |
-| `LINKEDIN-banner-1584x396.png` | Banner de LinkedIn a juego |
-| `REFERENCIA-*.png` | Capturas de referencia para pedir variantes a un generador de imágenes |
+| `LINKEDIN-banner-1584x396.png` | Banner de LinkedIn |
+| `FOTO-perfil-linkedin.png` | Foto de perfil (la misma del portafolio) |
+| `REFERENCIA-1-portafolio-hero.png` | Captura del sitio — contexto de marca para quien diseñe |
+| `QR-negro-transparente.png` · `QR-sobre-placa-blanca.png` | **QR reales y verificados** de la tarjeta |
 
 Comparten la identidad del sitio: fondo `#0A1020`, acento `#FACC15` y tipografía **Onest**
-(la misma de la web, incrustada desde `node_modules/@fontsource-variable/onest`).
+(la misma de la web, en `node_modules/@fontsource-variable/onest`).
 
-**El QR de la tarjeta apunta a `davidramirez.com.mx/?utm_source=tarjeta`**, así que las
-visitas desde la tarjeta se pueden medir en Vercel Analytics. Un QR debe generarse con una
-librería real (aquí, `qrcode`) y **verificarse decodificándolo**: los generadores de imágenes
-por IA producen patrones que parecen QR pero no escanean.
+**Los QR apuntan a `davidramirez.com.mx/?utm_source=tarjeta`**, así que las visitas desde la
+tarjeta se pueden medir en Vercel Analytics. Un QR debe generarse con una librería real
+(aquí, `qrcode`) y **verificarse decodificándolo**: los generadores de imágenes por IA
+producen patrones que parecen QR pero no escanean.
+
+**Tarjeta de presentación:** el diseño anterior se descartó (ago 2026); ahora lo hace Gemini.
+El brief, las especificaciones de imprenta y la bitácora de sus reportes están en
+[`tareas-gemini.md`](./tareas-gemini.md).
 
 ## Hecho reciente
 
