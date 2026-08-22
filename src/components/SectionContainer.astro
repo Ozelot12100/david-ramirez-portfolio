@@ -1,11 +1,14 @@
 ---
+// `container` no trae padding propio: en móvil la sección ocupa el 100% del
+// ancho y el contenido quedaba pegado a los bordes. `px-4` da los 16px de aire;
+// a partir de `md` sobra porque `md:max-w-2xl` ya deja margen a los lados.
 const { class: className, id } = Astro.props
 ---
 
 <section
   id={id}
   data-section={id}
-  class={`section ${className} scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl`}
+  class={`section ${className} scroll-m-20 w-full mx-auto container px-4 md:px-0 lg:max-w-4xl md:max-w-2xl`}
 >
   <slot />
 </section>
