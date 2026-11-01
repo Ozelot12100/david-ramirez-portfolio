@@ -27,7 +27,7 @@ Como freelancer, me especializo en digitalizar negocios locales en mi ciudad, Pu
 
 * **Puesto:** Desarrollador de Software Freelance  
 * **Empresa:** Proyectos Independientes / Negocios Locales  
-* **Fechas:** 2022 \- Actualidad  
+* **Fechas:** 2023 \- Actualidad  
 * **Descripción:** \* Desarrollo de aplicaciones móviles y sitios web a medida para optimizar la presencia digital de negocios en Puerto Peñasco.  
   * Creación y mantenimiento de bases de datos relacionales para sistemas de gestión interna.  
   * Implementación de arquitecturas modernas (MVVM) y soluciones de backend escalables.

@@ -46,7 +46,7 @@ No hay CMS ni archivos de datos. El sitio es **bilingüe (ES/EN)**, así que **t
 
 - `Hero.astro` — nombre, pitch (Full Stack + IA), email, enlaces sociales.
 - `Experience.astro` — array `EXPERIENCE`.
-- `Projects.astro` — objeto `TAGS` (tecnologías) y array `PROJECTS` (6 proyectos: Sistema Biométrico/IA, Palaliga, Hogarly, DropWear, La Casa de Ramona, Estrella Brothers). Cada proyecto tiene `link` (demo en vivo, solo si es pública), `github` (vacío = repo privado de cliente), `image` y `alt`.
+- `Projects.astro` — objeto `TAGS` (tecnologías) y array `PROJECTS` (7 proyectos: Sistema Biométrico/IA, Palaliga, Hogarly, DropWear, Marcador de RP Media House, La Casa de Ramona, Estrella Brothers). Cada proyecto tiene `link` (demo en vivo, solo si es pública), `github` (vacío = repo privado de cliente), `image` y `alt`.
 - `Skills.astro` — array `SKILLS` (tecnologías agrupadas por categoría). Se muestra en la sección "Tecnologías" (`id="tecnologias"`).
 - `AboutMe.astro` — biografía (texto en el markup).
 - `Header.astro` / `Footer.astro` — navegación, email de contacto.
