@@ -74,9 +74,10 @@ Mantenerlo sincronizado con lo que muestra la web.
 
 ### ⚠️ Repos privados de clientes
 
-Los 6 proyectos mostrados (Sistema Biométrico/Rocky Sushi, Palaliga, Hogarly, DropWear,
+Seis de los proyectos mostrados (Sistema Biométrico/Rocky Sushi, Palaliga, Hogarly, DropWear,
 La Casa de Ramona, Estrella Brothers) son **trabajos pagados por clientes y sus repos son
-privados**. Por eso tienen `github: ""` — el botón "Code" solo se renderiza cuando hay URL.
+privados**; el séptimo, el marcador de RP Media House, también es privado y está en la cuenta
+de Elvis Gastelum. Por eso tienen `github: ""` — el botón "Code" solo se renderiza cuando hay URL.
 **No enlazar repos de clientes sin permiso escrito**: un enlace a un repo privado se ve
 como 404 ante cualquier visitante, y hacer el repo público sin permiso puede violar el
 acuerdo con el cliente.
@@ -94,8 +95,8 @@ El backlog vivo está en **[pendientes.md](./pendientes.md)**: testimonios, enla
 migrar el correo de contacto al del dominio, evaluación de proyectos nuevos, JSON-LD
 (Person), imagen OG dedicada 1200×630, y upgrade a Astro 5 / Tailwind 4.
 
-> El portafolio muestra 6 proyectos (Sistema Biométrico/IA, Palaliga, Hogarly,
-> DropWear, La Casa de Ramona, Estrella Brothers) y una sección de Tecnologías
+> El portafolio muestra 7 proyectos (Sistema Biométrico/IA, Palaliga, Hogarly,
+> DropWear, Marcador de RP Media House, La Casa de Ramona, Estrella Brothers) y una sección de Tecnologías
 > por categorías. En `c:\dev` hay bastante más trabajo publicable: los candidatos
 > ya evaluados (con veredicto y motivo) están en la tabla de
 > [pendientes.md § 4](./pendientes.md) — **consúltala antes de volver a analizarlos**.

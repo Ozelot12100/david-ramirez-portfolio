@@ -12,6 +12,7 @@ import Supabase from "./icons/Supabase.astro";
 import TypeScript from "./icons/TypeScript.astro";
 import FastAPI from "./icons/FastAPI.astro";
 import Ai from "./icons/Ai.astro";
+import NestJS from "./icons/NestJS.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
@@ -42,6 +43,11 @@ const TAGS = {
     name: "FastAPI",
     class: "bg-[#009688] text-white",
     icon: FastAPI,
+  },
+  NEST: {
+    name: "NestJS",
+    class: "bg-[#E0234E] text-white",
+    icon: NestJS,
   },
   FLUTTER: {
     name: "Flutter",
@@ -144,6 +150,24 @@ const PROJECTS = [
       en: "DropWear executive dashboard with real-time sales and inventory metrics",
     },
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.SUPABASE, TAGS.TAILWIND],
+  },
+  {
+    title: {
+      es: "Marcador en vivo — RP Media House",
+      en: "Live Scoreboard — RP Media House",
+    },
+    description: {
+      es: "Marcador para transmisiones deportivas en vivo, desarrollado con mi socio para RP Media House, nuestra marca de producción audiovisual. Un servidor local en NestJS con SQLite sincroniza dos pantallas: el gráfico que sale al aire en OBS y el panel que se opera desde el celular. Tiene reloj, tiempo agregado y patrocinadores, y funciona para fútbol, tochito y pádel.",
+      en: "Scoreboard for live sports broadcasts, built with my partner for RP Media House, our audiovisual production brand. A local NestJS server with SQLite keeps two screens in sync: the on-air graphic in OBS and the control panel operated from a phone. It includes a clock, added time and sponsors, and works for soccer, flag football and padel.",
+    },
+    link: "https://www.facebook.com/share/1DyvZ37vDe/",
+    github: "",
+    image: "/projects/RPMediaHouse.webp",
+    alt: {
+      es: "Marcador al aire en OBS junto al panel de control en el celular, con el logo de RP Media House",
+      en: "On-air scoreboard in OBS next to the phone control panel, with the RP Media House logo",
+    },
+    tags: [TAGS.NEST, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: {

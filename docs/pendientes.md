@@ -61,7 +61,7 @@ sustituir `garrapatin12100@gmail.com` en los **4 sitios** donde aparece:
 
 ### 4. Evaluar proyectos nuevos para la sección Proyectos
 
-`c:\dev` ya tiene más trabajo que los 6 proyectos publicados. Evaluación (**agosto 2026**)
+`c:\dev` ya tiene más trabajo que los 7 proyectos publicados. Evaluación (**agosto 2026**)
 de los candidatos, para no repetir el análisis:
 
 | Proyecto | Estado real | Veredicto |
@@ -73,9 +73,9 @@ de los candidatos, para no repetir el análisis:
 | **Queor** (`Finanzas-personales`) | 🟢 Producción: <https://queor.vercel.app> | Diseño "terminal" distintivo y buena ingeniería de invariantes, pero es **proyecto personal**, no de cliente: vende menos servicios |
 | **Palenque P2P** (`palenque-p2p`) | 🟡 Staging: <https://palenque-p2p.vercel.app> | ⛔ **No publicar.** Apuestas sobre peleas de gallos: actividad ilegal en EE. UU. (delito federal), y el portafolio se dirige explícitamente a clientes de **México y Estados Unidos**. El riesgo reputacional supera al mérito técnico |
 
-**Recomendación:** el portafolio ya muestra 6 proyectos; pasar de 8 alarga demasiado el
-scroll. Añadir **ClipCourt** (capacidad única: vídeo/edge/multi-tenant) y **uno** de
-CostaPay / San José, según qué se quiera vender.
+**Recomendación:** el portafolio ya muestra 7 proyectos; pasar de 8 alarga demasiado el
+scroll. Solo queda un lugar: elegir **uno** entre **ClipCourt** (capacidad única:
+vídeo/edge/multi-tenant), CostaPay y San José, según qué se quiera vender.
 
 ### 5. JSON-LD (Person)
 
@@ -121,6 +121,11 @@ El brief, las especificaciones de imprenta y la bitácora de sus reportes están
 
 ## Hecho reciente
 
+- ✅ **RP Media House en el portafolio** (oct 2026): entrada en Experiencia y tarjeta del
+  marcador en vivo, con el visto bueno de Elvis Gastelum (socio y coautor). Se presenta como
+  trabajo técnico; a propósito **no** se muestran precios, cifras de seguidores ni La Zona FC
+  (en pausa por falta de pago). El repo del marcador es privado y está en la cuenta de Elvis:
+  no se enlaza. La imagen de la tarjeta usa capturas del software, no fotogramas de partidos.
 - ✅ **Tarjeta de presentación y kit de LinkedIn** (ago 2026) — ver "Activos de marca".
 - ✅ **Nav móvil**: la píldora se centraba sin `overflow`, así que en móvil el primer enlace
   caía fuera de pantalla ("Experiencia" se leía "…eriencia"). Ahora `.nav-pill` contiene un
