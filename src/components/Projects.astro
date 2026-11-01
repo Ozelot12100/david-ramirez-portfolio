@@ -91,6 +91,8 @@ const PROJECTS = [
     link: "",
     github: "",
     image: "/projects/RockySushi.webp",
+    width: 1200,
+    height: 675,
     alt: {
       es: "Panel administrativo del sistema biométrico de asistencia de Rocky Sushi",
       en: "Admin panel of Rocky Sushi's biometric attendance system",
@@ -109,6 +111,8 @@ const PROJECTS = [
     link: "https://palaliga.vercel.app",
     github: "",
     image: "/projects/Palaliga.webp",
+    width: 1200,
+    height: 884,
     alt: {
       es: "Interfaz de Palaliga mostrando la gestión de una liga de pádel",
       en: "Palaliga interface showing padel league management",
@@ -127,6 +131,8 @@ const PROJECTS = [
     link: "https://app.hogarly.app",
     github: "",
     image: "/projects/Hogarly.webp",
+    width: 1200,
+    height: 551,
     alt: {
       es: "Aplicación Hogarly para organizar tareas y compras del hogar en familia",
       en: "Hogarly app for organizing household chores and shopping as a family",
@@ -145,6 +151,8 @@ const PROJECTS = [
     link: "",
     github: "",
     image: "/projects/DropWear.webp",
+    width: 1200,
+    height: 540,
     alt: {
       es: "Panel ejecutivo de DropWear con métricas de ventas e inventario en tiempo real",
       en: "DropWear executive dashboard with real-time sales and inventory metrics",
@@ -163,6 +171,8 @@ const PROJECTS = [
     link: "https://www.facebook.com/share/1DyvZ37vDe/",
     github: "",
     image: "/projects/RPMediaHouse.webp",
+    width: 1200,
+    height: 675,
     alt: {
       es: "Marcador al aire en OBS junto al panel de control en el celular, con el logo de RP Media House",
       en: "On-air scoreboard in OBS next to the phone control panel, with the RP Media House logo",
@@ -181,6 +191,8 @@ const PROJECTS = [
     link: "https://www.lacasaderamona.com",
     github: "",
     image: "/projects/Lacasaderamona.webp",
+    width: 1200,
+    height: 675,
     alt: {
       es: "Sitio web de la renta vacacional de lujo La Casa de Ramona",
       en: "Website of the luxury vacation rental La Casa de Ramona",
@@ -199,6 +211,8 @@ const PROJECTS = [
     link: "https://www.estrellabrotherscarpentry.com",
     github: "",
     image: "/projects/EstrellaBrothers.webp",
+    width: 1200,
+    height: 675,
     alt: {
       es: "Trabajo de carpintería de Estrella Brothers: construcción de un patio techado",
       en: "Estrella Brothers carpentry work: building a covered patio",
@@ -210,15 +224,17 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, alt, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, width, height, alt, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
               alt={alt[lang]}
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              class="w-full h-auto transition duration-500 md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
+              width={width}
+              height={height}
             />
           </div>
         </div>

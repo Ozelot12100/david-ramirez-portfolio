@@ -61,6 +61,7 @@ Mantenerlo sincronizado con lo que muestra la web.
      link: "https://... o vacío",     // botón "Ver en vivo" (solo si hay demo pública)
      github: "",                        // ⚠️ ver nota de repos privados
      image: "/projects/MiProyecto.webp",
+     width: 1200, height: 675,          // tamaño real del WebP: reserva el espacio al cargar
      alt: {
        es: "Descripción de la imagen para accesibilidad",
        en: "Image description for accessibility",
